@@ -11,7 +11,7 @@ const NuevaVenta = () => {
           <form>          
             <h1 className="text-center">Pago</h1>
             <div className="form-group">
-              <label>Total</label>
+              <label>Efectivo</label>
               <input
                 type="email"
                 class="form-control"
@@ -20,7 +20,7 @@ const NuevaVenta = () => {
               />
             </div>
             <div className="form-group">
-              <label>Efectivo</label>
+              <label>Cambio</label>
               <input
                 type="email"
                 class="form-control"

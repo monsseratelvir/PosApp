@@ -2,13 +2,13 @@ import React from 'react';
 
 const Botones = ({ producto, newProduct }) => {
 
-  const { id, nombre, cantidad, precio } = producto
+  const { id, nombre, precio } = producto
 
   const seleccionProduct = () => {
     const prod = {
       id,
-      nombre, 
-      cantidad,
+      cantidad: 1,
+      nombre,
       precio
     }
 

@@ -14,13 +14,13 @@ const Form = () => {
                <div className='card mt-4 rounded col-md-4'>
                     <div className='card-body'>
                          <form>
-                              <h1 className='text-center'>Formulario</h1>
+                              <h1 className='text-center'>UPayWeb</h1>
                               <div className="form-group">
-                                   <label>Nombre: </label>
+                                   <label>correo: </label>
                                    <input className='form-control' type="text" name='name' value={name} onChange={handleChange} />
                               </div>
                               <div className="form-group">
-                                   <label>Edad: </label>
+                                   <label>contraseña: </label>
                                    <input className='form-control' type="text" name='edad' value={edad} onChange={handleChange} />
                               </div>
 

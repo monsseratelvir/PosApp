@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Product = ({ prod }) => {
+
   const { nombre, cantidad, precio } = prod
 
   return (

@@ -5,6 +5,7 @@ export const FirebaseContext = createContext();
 
 const Context = ({ children }) => {
   const [productos, setProductos] = useState([]);
+  const [facturas, setFacturas] = useState([])
 
   //para traer los datos de la base de datos
   useEffect(() => {
@@ -12,7 +13,12 @@ const Context = ({ children }) => {
       firebase.db.collection("productos").onSnapshot(handleSnapshot);
     };
 
+    const getFacturas = () => {
+      firebase.facturas.collection('facturas').onSnapshot(handleFactura)
+    }
+
     getProducts();
+    getFacturas()
   }, []);
 
   const handleSnapshot = (snapshot) => {
@@ -25,11 +31,22 @@ const Context = ({ children }) => {
 
     setProductos(productos);
   };
+
+  const handleFactura = (snapshot) => {
+    const facturas = snapshot.docs.map((doc) => {
+      return {
+        id: doc.id,
+        ...doc.data(),
+      };
+    });
+
+    setFacturas(facturas);
+  };
   //hasta aqui
 
 
   return (
-    <FirebaseContext.Provider value={{ productos, firebase }}>
+    <FirebaseContext.Provider value={{ productos, facturas, firebase }}>
       {children}
     </FirebaseContext.Provider>
   );
