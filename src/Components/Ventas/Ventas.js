@@ -22,7 +22,7 @@ const Ventas = () => {
     <section className='card'>
       <div className="row card-body">
         <div className="col-5 mt-2">
-          <TablaVenta products={products} />
+          <TablaVenta products={products} setProducts={setProducts} />
           <TotalPagar products={products} />
         </div>
         <div className="col-7 mt-2">

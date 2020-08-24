@@ -1,15 +1,35 @@
 import React from "react";
 import Product from './Product'
-import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
-const TablaVenta = ({ products }) => {
-  console.log(products)
+const TablaVenta = ({ products, setProducts }) => {
+
+  const alert = () => {
+    Swal.fire({
+      title: '¿Acceder a pago?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'confirmar'
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire(
+          'Pago realizado con exito',
+          'success'
+        )
+
+        setProducts([])
+      }
+    })
+  }
+  
   return (
     <div className="">
       <div className="card">
         <div className="card-body">         
           <div className="row justify-content-end">
-              <Link to={'/nueva-venta'} className='btn btn-outline-success mr-3 mb-2'>Pagar</Link>
+              <button type='button' className='btn btn-outline-success mr-3 mb-2'  onClick={() => alert()}>Pagar</button>
             </div>
           <table className="table">
             <thead>

@@ -16,7 +16,7 @@ const Botones = ({ producto, newProduct }) => {
   }
 
   return (
-    <button className='btn btn-outline-primary mr-2' onClick={() => seleccionProduct()} >
+    <button className='btn btn-outline-primary mr-2 mt-1' onClick={() => seleccionProduct()} >
       {nombre}
     </button>
   );

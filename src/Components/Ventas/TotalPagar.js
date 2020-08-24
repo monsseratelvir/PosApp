@@ -25,7 +25,7 @@ const TotalPagar = ({ products }) => {
   return (
     <div className="">
       <h2>Subtotal: {subtotal}</h2>
-      <h4>ISV: {isv}</h4>
+      <h4>ISV: {parseFloat(isv).toFixed(2)}</h4>
       <h1>Total: {totalpagar}</h1>
     </div>
   );

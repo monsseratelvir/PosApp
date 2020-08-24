@@ -1,9 +1,12 @@
 import { Component } from 'react'
 import FirebaseConfig from './config'
+import app from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/storage'
 import 'firebase/firestore'
-import app from 'firebase/app'
+
+
+
 
  class Firebase extends Component {
   constructor(){
@@ -13,7 +16,7 @@ import app from 'firebase/app'
     this.auth = app.auth()
     this.db = app.firestore()
     this.facturas = app.firestore()
-    this.storage = app.storage()
+    this.storage = app.storage()        
   }
 
   async registrar(name, email, password){
